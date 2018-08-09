@@ -37,7 +37,7 @@ BLOCK = 'block'
 BALL = 'ball'
 PADDLE = 'paddle'
 BALLSPEED = 4
-
+clock = pygame.time.Clock() # object that controls the framerate
 
 class Block(pygame.sprite.Sprite):
  
@@ -232,6 +232,7 @@ class App(object):
 
     def mainLoop(self):
         while True:
+            clock.tick(60) # frame rate to 60
             self.displaySurf.fill(BGCOLOR)
             self.updateScore()
             self.displaySurf.blit(self.score.render, self.score.rect)
