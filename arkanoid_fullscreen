@@ -200,7 +200,7 @@ class App(object):
             if event.type == QUIT:
                 self.terminate()
             if event.type == KEYUP:
-                if event.key == K_q:
+                if event.key == K_ESCAPE or event.key == K_q:
                     self.terminate()
 
             if event.type == MOUSEMOTION:
@@ -211,6 +211,9 @@ class App(object):
             elif event.type == KEYUP:
                 if event.key == K_SPACE:
                     self.ball.moving = True
+
+            elif event.type == MOUSEBUTTONDOWN:
+                self.ball.moving = True
 
     def terminate(self):
         pygame.quit()
